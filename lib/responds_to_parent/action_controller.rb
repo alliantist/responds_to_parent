@@ -37,6 +37,9 @@ module RespondsToParent
           instance_variable_set(:@_response_body, nil)
         end
 
+        response.status = "200 OK"
+        response.headers.delete('Location')
+
         render :text => script
       end
     end
