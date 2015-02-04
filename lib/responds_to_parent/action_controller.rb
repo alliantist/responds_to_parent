@@ -37,6 +37,7 @@ module RespondsToParent
           instance_variable_set(:@_response_body, nil)
         end
 
+        # Add the equivalent functionality of erase_redirect_results
         response.status = "200 OK"
         response.headers.delete('Location')
 
