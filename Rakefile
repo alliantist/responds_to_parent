@@ -1,12 +1,7 @@
 require 'bundler/setup'
-require 'appraisal'
 require 'rake/testtask'
 require 'rake/rdoctask'
 require 'bundler/gem_tasks'
-
-task :default do
-  sh "rake appraisal:install && rake appraisal test"
-end
 
 desc 'Test the responds_to_parent plugin.'
 Rake::TestTask.new :default do |t|
