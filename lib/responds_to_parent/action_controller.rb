@@ -27,9 +27,6 @@ module RespondsToParent
           with(window.parent) { setTimeout(function() { window.eval('#{self.class.helpers.escape_javascript script}'); window.loc && loc.replace('about:blank'); }, 1) }
         </script></body></html>"
 
-        # We're returning HTML instead of JS or XML now
-        response.headers['Content-Type'] = 'text/html; charset=UTF-8'
-
         # Clear out the previous render to prevent double render and then render
         if respond_to?(:erase_results, true)
           erase_results
@@ -41,7 +38,8 @@ module RespondsToParent
         response.status = "200 OK"
         response.headers.delete('Location')
 
-        render :text => script
+        # set content_type because returning HTML instead of JS or XML now
+        render :text => script, :content_type => "text/html"
       end
     end
     alias respond_to_parent responds_to_parent

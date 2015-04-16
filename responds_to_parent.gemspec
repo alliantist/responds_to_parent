@@ -1,4 +1,4 @@
-Gem::Specification.new 'responds_to_parent', '1.1'  do |s|
+Gem::Specification.new 'responds_to_parent', '1.1.1'  do |s|
   s.authors     = ["Mark Catley", "Lorenzo Lopez-Sancho"]
   s.homepage    = 'https://github.com/alliantist/responds_to_parent'
   s.summary     = "[Rails] Adds 'responds_to_parent' to your controller to" +
